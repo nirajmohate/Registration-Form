@@ -1,8 +1,29 @@
-function clear() {
-    var clear = document.getElementById('clear');
-    var input = document.getElementsByTagName(input);
-    document.getElementsByTagName('input').reset();
-}
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('clear').addEventListener('click', function() {
+        var inputs = document.getElementsByTagName('input');
+        for (var i = 0; i < inputs.length; i++) {
+            // Add 'date' and 'number' to the types checked
+            if (inputs[i].type === 'text' || inputs[i].type === 'email' || inputs[i].type === 'password' || inputs[i].type === 'date' || inputs[i].type === 'number' || inputs[i].type === 'number') {
+                inputs[i].value = ''; // Reset the value of each appropriate input field
+            }
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('clear').addEventListener('click', function() {
+        var selects = document.querySelectorAll('select');
+        selects.forEach(function(select) {
+            // This assumes the default or placeholder option is at index 0
+            select.selectedIndex = 0;
+        });
+    });
+});
+
+
+
+
+
 
 
 function submit() {

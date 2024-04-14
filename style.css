@@ -1,53 +1,75 @@
-#container{
-   margin:100px;
-   border:2px solid black;
-   border-radius: 5px;
-   padding:40px;
-   background-color: white;
-  
-}
-body{
-   
-    background-image: linear-gradient(to bottom right ,rgb(220, 102, 250) , blue);
-    
-}
-h1{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+#container {
+    margin: 100px auto; /* Centering the container */
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 40px;
+    background-color: white;
+    max-width: 600px; /* Limiting maximum width */
+    box-sizing: border-box; /* Includes padding in width */
 }
 
+body {
+    background-image: linear-gradient(to bottom right, rgb(220, 102, 250), blue);
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
+    font-family: Verdana, Geneva, Tahoma, sans-serif; /* Consistent font for the body */
+}
 
-#clear{
-    margin-left: 600px;
-    color:white;
+h1 {
+    font-family: inherit; /* Ensures h1 inherits body's font-family */
+}
+
+#clear, #Submit {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: rgb(95, 84, 253);
+    color: white;
+    font-weight: 600;
+    border: none; /* Removing default border */
+    cursor: pointer; /* Indicates clickable items */
+}
+
+#clear {
+    margin-left: auto; /* Pushes button to the right */
     margin-top: 30px;
     margin-right: 55px;
-    padding:10px;
-    border-radius: 15px;
-    background-color: rgb(95, 84, 253);
-    font-weight: 600;
-    border-color:rgb(95, 84, 253) ;
-    
+    width: calc(100% - 30px); /* Adjusted for right alignment */
 }
-#Submit{
+
+#Submit {
     margin-top: 30px;
-    padding:10px;
-    border-radius: 15px;
-    background-color: rgb(95, 84, 253);
-    color:white;
-    font-weight: 600;
-    border-color:rgb(95, 84, 253) ;
+    display: block; /* Makes button take full container width */
+    width: calc(100% - 30px); /* Adjusts width considering margins */
 }
-#clear:hover{
-      background-color: white;
-      color:black;
-}
-#Submit:hover{
+
+#clear:hover, #Submit:hover {
     background-color: white;
-    color:black;
+    color: black;
 }
-input{
+
+input {
     border-radius: 5px;
-    border-color: rgb(92, 103, 253);
-    margin:15px;
+    border: 2px solid rgb(92, 103, 253);
+    margin: 15px;
     padding: 5px;
+    display: block; /* Ensures full width */
+    width: calc(100% - 30px); /* Adjusts width considering margins */
 }
+
+/* Responsive Media Queries */
+@media (max-width: 768px) {
+    #container {
+        margin: 20px; /* Smaller margin on smaller screens */
+        padding: 20px;
+    }
+    #clear {
+        margin-right: 20px; /* Adjust right margin to match new container padding */
+    }
+}
+
+@media (max-width: 480px) {
+    input, #clear, #Submit {
+        font-size: 16px; /* Larger font size for better readability */
+    }
+}
+
